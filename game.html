@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        body {
+            background-color: rgb(226, 234, 243);
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .page {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .center {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-color: black;
+            width: 400px;
+        }
+
+        .hud {
+            display: flex;
+            justify-content: space-between;
+            width: 400px;
+        }
+
+        .hud-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: Tahoma, sans-serif;
+        }
+
+        .hud-blue {
+            font-size: larger;
+            font-weight: 900;
+            color: rgb(81, 152, 245);
+        }
+
+        .progress-bar-container {
+            width: 150px;
+            height: 20px;
+            background-color: rgb(226, 234, 243);
+            border-style: solid;
+            border-color: rgb(81, 152, 245);
+            overflow: hidden;
+            margin-top: 10px;
+        }
+
+        .progress-bar {
+            height: 100%;
+            width: 0;
+            background-color: rgb(81, 152, 245);
+            transition: width 0.3s;
+        }
+
+        p {
+            font-size: larger;
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+            font-family: Tahoma, sans-serif;
+        }
+
+        .option {
+            background-color: white;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            height: 40px;
+            width: 400px;
+            margin: 3px;
+        }
+
+        .option:hover {
+            box-shadow: 0 0 10px 0 rgb(85, 159, 180);
+        }
+
+        .option span:first-child {
+            color: white;
+            background-color: rgb(81, 152, 245);
+            height: 100%;
+            padding-left: 10px;
+            padding-right: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .option span:last-child {
+            margin: 10px;
+        }
+
+        @keyframes correct {
+            0% {
+                background-color: white;
+            }
+
+            100% {
+                background-color: lightgreen;
+            }
+        }
+
+        @keyframes incorrect {
+            0% {
+                background-color: white;
+            }
+
+            100% {
+                background-color: red;
+            }
+        }
+
+        .correct {
+            animation: correct 1s;
+        }
+
+        .incorrect {
+            animation: incorrect 1s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page">
+        <div class="center">
+            <div class="hud">
+                <div class="hud-item">
+                    <div class="hudrow">
+                        <span>Question No.</span>
+                        <span id="question-number" class="hud-blue">1/5</span>
+                    </div>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" id="progress-bar">f</div>
+                    </div>
+                </div>
+                <div class="hud-item">
+                    <span>Score</span>
+                    <span id="score" class="hud-blue">0</span>
+                </div>
+            </div>
+            <p>What is the capital of Delhi?</p>
+            <div class="option">
+                <span class="optionSerial">A</span><span class="optionContent">Mumbai</span>
+            </div>
+            <div class="option">
+                <span class="optionSerial">B</span><span class="optionContent">Kolkata</span>
+            </div>
+            <div class="option">
+                <span class="optionSerial">C</span><span class="optionContent">Delhi</span>
+            </div>
+            <div class="option">
+                <span class="optionSerial">D</span><span class="optionContent">Chennai</span>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

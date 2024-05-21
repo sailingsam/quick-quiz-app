@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>End of Quiz</title>
+    <style>
+        body {
+            background-color: rgb(226, 234, 243);
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .center {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        h1 {
+            color: rgb(77, 148, 241);
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        .score {
+            font-size: larger;
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+            font-family: Tahoma, sans-serif;
+            margin-bottom: 20px;
+        }
+
+        a {
+            display: inline-block;
+            padding: 5px 50px;
+            background-color: white;
+            color: rgb(77, 148, 241);
+            text-decoration: none;
+            border: 1px solid rgb(77, 148, 241);
+            margin: 10px 0;
+        }
+
+        a:hover {
+            background-color: rgb(77, 148, 241);
+            color: white;
+            box-shadow: 0 0 10px 0 rgb(148, 191, 243);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="center">
+        <h1>Quiz Completed!</h1>
+        <div class="score">Your final score is <span id="final-score">0</span></div>
+        <a href="game.html">Play Again</a>
+        <a href="index.html">Go Home</a>
+    </div>
+    <script>
+        let params = new URLSearchParams(window.location.search);
+        let finalScore = params.get('score') || 0;
+        document.getElementById('final-score').textContent = finalScore;
+    </script>
+</body>
+
+</html>
